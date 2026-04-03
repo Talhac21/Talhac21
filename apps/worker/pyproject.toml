@@ -1,0 +1,11 @@
+[project]
+name = "rr-panel-worker"
+version = "0.2.0"
+requires-python = ">=3.12"
+dependencies = [
+  "sqlalchemy>=2.0.35",
+  "psycopg[binary]>=3.2.1"
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8.3.3"]
