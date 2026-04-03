@@ -45,7 +45,12 @@ def _build_session(account: Account) -> httpx.Client:
 
 
 def _check_session_alive(client: httpx.Client) -> bool:
-    """Quick check: hit the main page and see if we are logged in."""
+    """Quick check: hit the profile slide and verify we get an authenticated response.
+
+    When logged-out, Rival Regions redirects or returns a page containing
+    a 'userMenu' login form prompt.  Its *absence* in a 200 response
+    indicates we are still authenticated.
+    """
     try:
         resp = client.get("/slide/profile")
         return resp.status_code == 200 and "userMenu" not in resp.text

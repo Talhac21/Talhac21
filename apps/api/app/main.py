@@ -33,6 +33,7 @@ app = FastAPI(title="RR Control Panel API", version="0.1.0", lifespan=lifespan)
 
 app.add_middleware(
     CORSMiddleware,
+    # NOTE: Restrict allow_origins to your actual domain(s) before deploying to production.
     allow_origins=["*"],
     allow_credentials=True,
     allow_methods=["*"],
