@@ -1,13 +1,18 @@
 import "./globals.css";
 import Link from "next/link";
 
+export const metadata = {
+  title: "RR Control Panel",
+  description: "Rival Regions account & perk management",
+};
+
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
       <body>
         <main>
-          <h1>RR Control Panel</h1>
-          <nav style={{ display: "flex", gap: 12, marginBottom: 20 }}>
+          <h1>🎮 RR Control Panel</h1>
+          <nav style={{ display: "flex", gap: 12, marginBottom: 20, flexWrap: "wrap" }}>
             <Link href="/dashboard">Dashboard</Link>
             <Link href="/accounts">Accounts</Link>
             <Link href="/tags">Tags</Link>

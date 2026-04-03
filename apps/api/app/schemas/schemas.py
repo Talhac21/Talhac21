@@ -15,8 +15,7 @@ class AccountOut(BaseModel):
     session_status: str
     last_sync_at: datetime | None
 
-    class Config:
-        from_attributes = True
+    model_config = {"from_attributes": True}
 
 
 class SessionBootstrapIn(BaseModel):
