@@ -13,7 +13,7 @@ Production-minded monorepo for a **small-scale control panel** supporting **up t
 - `apps/api` — FastAPI backend
 - `apps/worker` — APScheduler worker for low-frequency jobs
 - `packages/shared` — shared constants/types
-- `infra` — docker-compose and Caddy config
+- `infra` — Caddy config
 - `docs` — architecture and deployment docs
 - `scripts` — startup and backup scripts
 
@@ -44,8 +44,8 @@ Production-minded monorepo for a **small-scale control panel** supporting **up t
 - API + worker scheduler tests are included.
 - Run with:
   ```bash
-  docker compose -f infra/docker-compose.yml run --rm api pytest
-  docker compose -f infra/docker-compose.yml run --rm worker pytest
+  docker compose run --rm api pytest
+  docker compose run --rm worker pytest
   ```
 
 ## Notes

@@ -3,6 +3,6 @@ set -euo pipefail
 
 mkdir -p backups
 STAMP="$(date -u +%Y%m%d_%H%M%S)"
-docker compose -f infra/docker-compose.yml exec -T db pg_dump -U "${POSTGRES_USER:-rr_user}" "${POSTGRES_DB:-rr_panel}" > "backups/db_${STAMP}.sql"
+docker compose exec -T db pg_dump -U "${POSTGRES_USER:-rr_user}" "${POSTGRES_DB:-rr_panel}" > "backups/db_${STAMP}.sql"
 echo "encrypted_sessions_export_placeholder" > "backups/sessions_${STAMP}.txt"
 echo "Backup created at ${STAMP}"
