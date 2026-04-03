@@ -1,0 +1,6 @@
+:root { color-scheme: dark; }
+body { margin: 0; font-family: Inter, Arial, sans-serif; background: #0b1020; color: #e5e7eb; }
+main { max-width: 1120px; margin: 0 auto; padding: 24px; }
+.card { background: #121a31; border: 1px solid #29314f; border-radius: 12px; padding: 16px; margin-bottom: 12px; }
+.grid { display: grid; gap: 12px; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
+a { color: #9cc9ff; text-decoration: none; }
