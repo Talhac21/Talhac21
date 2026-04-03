@@ -1,9 +1,0 @@
-pyproject.toml
-rr_panel_worker.egg-info/PKG-INFO
-rr_panel_worker.egg-info/SOURCES.txt
-rr_panel_worker.egg-info/dependency_links.txt
-rr_panel_worker.egg-info/requires.txt
-rr_panel_worker.egg-info/top_level.txt
-tests/test_scheduler.py
-worker/__init__.py
-worker/main.py
