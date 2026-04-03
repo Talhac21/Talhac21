@@ -1,0 +1,13 @@
+[project]
+name = "rr-panel-worker"
+version = "0.1.0"
+requires-python = ">=3.12"
+dependencies = [
+  "apscheduler>=3.10.4",
+  "sqlalchemy>=2.0.35",
+  "psycopg[binary]>=3.2.1",
+  "pydantic-settings>=2.5.2"
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8.3.3"]
