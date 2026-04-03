@@ -4,22 +4,22 @@ services:
     ports:
       - "80:80"
     volumes:
-      - ./caddy/Caddyfile:/etc/caddy/Caddyfile:ro
+      - ./infra/caddy/Caddyfile:/etc/caddy/Caddyfile:ro
     depends_on:
       - web
       - api
     restart: unless-stopped
 
   web:
-    build: ../apps/web
+    build: ./apps/web
     environment:
       - NEXT_PUBLIC_API_URL=${NEXT_PUBLIC_API_URL}
     restart: unless-stopped
 
   api:
-    build: ../apps/api
+    build: ./apps/api
     env_file:
-      - ../.env
+      - ./.env
     depends_on:
       - db
     healthcheck:
@@ -30,9 +30,9 @@ services:
     restart: unless-stopped
 
   worker:
-    build: ../apps/worker
+    build: ./apps/worker
     env_file:
-      - ../.env
+      - ./.env
     environment:
       - API_BASE_URL=http://api:8000
       - API_ADMIN_TOKEN=${API_ADMIN_TOKEN}
